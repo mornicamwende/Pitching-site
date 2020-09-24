@@ -6,18 +6,18 @@
 <link rel="stylesheet" href="{{url_for('static',filename='css/interview.css')}}">
 {% endblock %}
 {% block content %}
-<section class=" inter bg-secondary">
+<section style="background-color:beige; height:700px; font:italic;">
         <div class="container" style="background-color:beige; height:700px;">
-                <h3 style="font-size:50px;" class="text-center text-dark">Inteview Pitches</h3>
-                <a style="font-size:30px;" class="btn-primary btn-md " href="{{url_for('main.new_pitch')}}">
+                <h3 style="font-size:50px; text-decoration:underline;" class="text-center text-dark">Inteview Pitches</h3>
+                <a style="text:center; btn:large" class="btn btn-primary btn-xl;" href="{{url_for('main.new_pitch')}}">
                     <br>
                     Add a new Pitch
                 </a>
-        
-                <hr>
+        <p style="font-size:40px; font-style:italic;  font-weight:bold; text-align:center;">Let's drop all out inteview pitches here past experiences <br> you can share or anything we feel helps in an interview platform</p>
+            
                 
                     {{macro.displayPitchesInCategories(pitches,1)}}
-                <hr>
+        
             
             </div>
 </section>
