@@ -1,0 +1,26 @@
+
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/interview.css')}}">
+{% endblock %}
+{% block content %}
+<section class=" inter bg-secondary">
+        <div class="container" style="background-color:beige; height:700px;">
+                <h3 style="font-size:50px;" class="text-center text-dark">Inteview Pitches</h3>
+                <a style="font-size:30px;" class="btn-primary btn-md " href="{{url_for('main.new_pitch')}}">
+                    <br>
+                    Add a new Pitch
+                </a>
+        
+                <hr>
+                
+                    {{macro.displayPitchesInCategories(pitches,1)}}
+                <hr>
+            
+            </div>
+</section>
+   
+
+{% endblock %}

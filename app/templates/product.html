@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/product.css')}}">
+{% endblock %}
+ 
+{% block content %}
+<section style="background-color:beige; height:700px; font:italic;">
+        <div class="container">
+                <h1 style="font-size:40px; font-weight:bolder; text-decoration:underline;" class="text-center ">Product Pitches</h1>
+                <p style="font-size:40px; font-style:italic;  font-weight:bold; text-align:center;" > Here let's drop all <br> our product pitches <br> promote a product or write an atricle <br> about a product</p>
+                <a  style="text:center; btn:large" class="btn btn-primary btn-xl  ;" href="{{url_for('main.new_pitch')}}">
+                    Add a new Pitch
+                </a>
+                
+                    {{macro.displayPitchesInCategories(pitches,4)}}
+            
+            
+            </div>
+</section>
+    
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/pickup.css')}}">
+{% endblock %}
+
+{% block content %}
+<section style="background-color:beige; height:700px; font:italic; font-size:20px;">
+
+        <div class="container ">
+                <h1 class="text-center font-size:20PX; text-decoration:underline; text-dark">Pick Up Lines</h1>
+                <a style="text:center; text-align:center;" class="btn btn-primary btn-xl;" href="{{url_for('main.new_pitch')}}">
+                    <br>
+                    Add a new Pitch
+                </a>
+        
+    
+                
+                    {{macro.displayPitchesInCategories(pitches,2)}}
+
+            
+            </div>
+
+</section>
+{% endblock %}

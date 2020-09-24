@@ -1,0 +1,59 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>love</title>
+</head>
+<body>
+  <nav style="background-color:pink" class="navbar navbar-expand-lg navbar-d  text-dark">
+    
+    <button class="text-dark" type="button" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class=""></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a style="font-size:20px;" class="nav-link mr-5 text-light"  href="/"><strong>HOME</strong> <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a style="font-size:20px; "class="nav-link mr-5 text-light" href="{{url_for('main.all')}}"><strong>All pitches</strong> <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a style="font-size:20px;" class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <strong>Select Category</strong>
+          </a>
+          <div class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
+            <a style="font-size:20px;" class="dropdown-item" href="{{url_for('main.interview')}}"><strong>Interview Pitches</strong></a>
+            <a style="font-size:20px;" class="dropdown-item" href="{{url_for('main.pick_up_line')}}"><strong> pick Up Lines</strong> </a>
+            <div class="dropdown-divider"></div>
+            <a style="font-size:20px;" class="dropdown-item" href="{{url_for('main.promotion')}}"><strong>Promotion Pitches</strong></a>
+            <a style="font-size:20px;" class="dropdown-item"  href="{{url_for('main.product')}}"><strong>Product Pitches</strong></a>
+          </div>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if current_user.is_authenticated %}
+        <!-- <li style="color:white;padding:15px;">{{current_user.username}}</li> -->
+        <li class="dropdown"><a style="font-size:20px; "href="#" class="dropdown-toggle text-dark" data-toggle="dropdown"><i class="fa fa-user"></i><strong class="ml-2">Welcome,</strong> <b class="caret"></b></a>
+          <ul class="dropdown-menu bg-dark text-center">
+              <li><a style="font-size:20px;"href="{{url_for('main.profile',uname=current_user.username)}} " class="text-light" ><i class="icon-envelope"></i><strong>Your profile</strong></a></li>
+              <li class="divider"></li>
+              <div class="dropdown-divider"></div>
+              <li><a style="font-size:20px;"href="{{url_for('auth.logout')}}" class="text-light "><i class="fa fa-sign-out mr-2"></i><strong>Logout</strong></a></li>
+          </ul>
+      </li>
+        {% else %}
+        <li><a style="font-size:20px;"href="{{url_for('auth.login')}}" class="text-light"><i class="fa fa-sign-in mr-2"></i><strong>Sign In</strong></a></li>
+        {%endif%}
+      </ul>
+    </div>
+  </nav>
+</body>
+</html>
