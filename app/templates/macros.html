@@ -1,14 +1,14 @@
 {% macro displayPitches(pitches_list) %}
 
     {% for pitch in pitches_list[::-1] %}
-      <div class="panel style="style="box-shadow: 5px 5px 5px 5px #f2f2f2; padding:10px; text-align:center;">
-          <h3>{{pitch.pitch}}</h3>
-          <p> Posted on:{{pitch.date}}</p>
+      <div class="panel style="style="box-shadow: 1px 1px 1px 1px; padding:10px; text-align:center; padding:20px; margin-top:20px;">
+          <h2>{{pitch.pitch}}</h2>
+          <h5 style="font-style:italic;"> ~ Posted on: {{pitch.date.strftime('%Y-%m-%d')}}</h1>
           <br>
-          <a href="{{url_for('main.new_comment',id=pitch.id)}}">Add a Comment
-          <a href="{{url_for('main.upvote',pitch_id = pitch.id)}}" class= "btn btn-success btn-sm">Upvote <span>{{pitch.upvotes.count()}}</span></a>
-          <a href="{{url_for('main.downvote',pitch_id = pitch.id)}}" class= "btn btn-danger btn-sm">Downvote <span>{{pitch.downvotes.count()}}</span></a>&nbsp;&nbsp;|
-          <a href="{{url_for('main.view_comments',id=pitch.id)}}">View Comments</a>&nbsp;&nbsp;|
+          <a href="{{url_for('main.new_comment',id=pitch.id)}}" style="font-size:18px;" class="btn btn-success">Add a Comment</a>
+          <a href="{{url_for('main.upvote',pitch_id = pitch.id)}}" style="font-size:18px;" class= "btn btn-success btn-sm">Upvote <span>{{pitch.upvotes.count()}}</span></a>
+          <a href="{{url_for('main.downvote',pitch_id = pitch.id)}}" style="font-size:18px;" class= "btn btn-danger btn-sm">Downvote <span>{{pitch.downvotes.count()}}</span></a>&nbsp;&nbsp;
+          <a href="{{url_for('main.view_comments',id=pitch.id)}}" style="font-size:18px;" class="btn btn-dark">View Comments</a>&nbsp;&nbsp;
       </div> 
     {% endfor %}
 
