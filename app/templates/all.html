@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% comment %} {% extends 'base.html' %}
 {% import 'macros.html' as macro%}
 
 <!-- styles block -->
@@ -16,7 +16,7 @@
         <a href="{{url_for('main.new_pitch')}}"><br>
             <span style= "color:blue;" class=" text-light display-4">Add a new Pitch</span></a>
         </div>
-        <hr>
+        <hr> config.py
     <div class="row ">
             <div style= "background-color:beige;" class=" col-md-8 mx-auto  all-pitches">
                     {{macro.displayPitches(pitches)}}
@@ -24,4 +24,4 @@
     </div> 
     </div>
 </section>
-{% endblock%}
+{% endblock%} {% endcomment %}

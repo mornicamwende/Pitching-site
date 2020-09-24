@@ -5,7 +5,7 @@ from . import mail
 
 
 def mail_message(subject,template,to,**kwargs):
-    subject_pref = 'Watchlist'
+    subject_pref = 'pitch app'
     sender_email = 'mornicamwendegmail.com'
 
     email = Message(subject, sender=sender_email, recipients=[to])

@@ -51,7 +51,8 @@
       </li>
         {% else %}
         <li><a style="font-size:20px;"href="{{url_for('auth.login')}}" class="text-light"><i class="fa fa-sign-in mr-2"></i><strong>Sign In</strong></a></li>
-        {%endif%}
+        {%endif%}        {% comment %} <button type="button" class="close" data-dismiss="alert">&times;</button> {% endcomment %}
+
       </ul>
     </div>
   </nav>
