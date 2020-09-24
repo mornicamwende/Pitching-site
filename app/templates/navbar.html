@@ -41,7 +41,7 @@
       <ul class="nav navbar-nav navbar-right">
         {% if current_user.is_authenticated %}
         <!-- <li style="color:white;padding:15px;">{{current_user.username}}</li> -->
-        <li class="dropdown"><a style="font-size:20px; "href="#" class="dropdown-toggle text-dark" data-toggle="dropdown"><i class="fa fa-user"></i><strong class="ml-2">Welcome,</strong> <b class="caret"></b></a>
+        <li class="dropdown"><a style="font-size:20px; "href="#" class="dropdown-toggle text-dark" data-toggle="dropdown"><i class="fa fa-user"></i><strong class="ml-2">Welcome</strong> <b class="caret"></b></a>
           <ul class="dropdown-menu bg-dark text-center">
               <li><a style="font-size:20px;"href="{{url_for('main.profile',uname=current_user.username)}} " class="text-light" ><i class="icon-envelope"></i><strong>Your profile</strong></a></li>
               <li class="divider"></li>
