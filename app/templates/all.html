@@ -10,17 +10,18 @@
 
 <!-- Content block -->
 {% block content %}
-<section class="bg-secondary">
+<section style="background-color: #fff;">
 <div class="container">
-    <div class="col-md-6 mx-auto">
-        <a href="{{url_for('main.new_pitch')}}"><br>
-            <span style= "color:blue;" class=" text-light display-4">Add a new Pitch</span></a>
+    <div class="col-md-8" style="margin-left:15%;">
+        <a href="{{url_for('main.new_pitch')}}" class="btn btn-success btn-sm"><br>
+          <span style= "color:#fff; font-size:20px;">Add a new Pitch</span>
+        </a>
+        <div class="pitch">
+        <div class="mx-auto  all-pitches">
+            {{macro.displayPitches(pitches)}}
         </div>
-    <div class="row ">
-            <div style= "background-color:beige;" class=" col-md-8 mx-auto  all-pitches">
-                    {{macro.displayPitches(pitches)}}
-                 </div>
-    </div> 
     </div>
+    </div>
+</div>
 </section>
 {% endblock%}
