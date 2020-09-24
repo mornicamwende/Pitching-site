@@ -5,7 +5,7 @@ from app.models import User, Comment, Pitch, PitchCategory
 
 
 
-# app = create_app('production')
+app = create_app('production')
 
 manager = Manager(app)
 manager.add_command('server',Server)
